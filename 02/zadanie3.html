@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Przykładowa Tabela</title>
+    <style>
+        .yellow-bg { background-color: yellow; }
+        .blue-bg { background-color: lightblue; }
+    </style>
+</head>
+<body>
+
+<table border="1">
+    <colgroup>
+        <col span="2" class="yellow-bg">
+        <col span="2" class="blue-bg">
+    </colgroup>
+    <tr>
+        <th colspan="4">Tabela przykładowa</th>
+    </tr>
+    <tr>
+        <th>Grupa A</th>
+        <th>Mecz 1</th>
+        <th>Mecz 2</th>
+    </tr>
+    <tr>
+        <td>Rosja</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>Polska</td>
+        <td>2</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<br>
+
+<table border="1">
+    <tr class="yellow-bg">
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Wiek</th>
+    </tr>
+    <tr>
+        <td>Jan</td>
+        <td>Kowalski</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Anna</td>
+        <td>Nowak</td>
+        <td>30</td>
+    </tr>
+    <tr class="blue-bg">
+        <td colspan="2">Razem</td>
+        <td>55</td>
+    </tr>
+</table>
+
+</body>
+</html>

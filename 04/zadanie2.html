@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz Kontaktowy</title>
+    <style>
+        form {
+            width: 500px;
+            margin: 0 auto 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label, input, button {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        span {
+            display: block;
+            width: 30px;
+            margin: auto;
+            text-align: center;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <label for="email">e-mail</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">telefon</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="fullname">imię i nazwisko</label>
+    <input type="text" id="fullname" name="fullname" required>
+
+    <button type="submit">Wyślij</button>
+</form>
+
+</body>
+</html>

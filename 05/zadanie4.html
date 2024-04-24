@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Skomplikowana strona</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            max-width: 900px;
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header, footer {
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .main-title {
+            grid-column: 1 / 3;
+        }
+        .main-content, .sidebar {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .main-content {
+            grid-column: 1 / 3;
+        }
+        .sidebar {
+            grid-column: 3;
+        }
+        .feature {
+            margin-bottom: 10px;
+        }
+        .footer-text {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <nav>
+            <a href="#">Strona główna</a>
+            <a href="#">O nas</a>
+            <a href="#">Kontakt</a>
+        </nav>
+    </header>
+
+    <div class="main-title">
+        <h1>Witaj na naszej skomplikowanej stronie!</h1>
+    </div>
+
+    <div class="main-content">
+        <div class="feature">
+            <h2>Funkcja 1</h2>
+            <p>Opis funkcji 1...</p>
+        </div>
+        <div class="feature">
+            <h2>Funkcja 3</h2>
+            <p>Opis funkcji 3...</p>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="feature">
+            <h2>Funkcja 2</h2>
+            <p>Opis funkcji 2...</p>
+        </div>
+        <div class="feature">
+            <h2>Dodatkowe informacje</h2>
+            <p>...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">© 2023 Skomplikowana strona z flexboxem. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+</div>
+
+</body>
+</html>
