@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .calculator {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        input[type="text"], select {
+            padding: 5px;
+            margin: 5px;
+            width: 200px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <h3>Prosty</h3>
+    <select id="basicOp">
+        <option value="add">Dodawanie</option>
+        <option value="subtract">Odejmowanie</option>
+        <option value="multiply">Mnożenie</option>
+        <option value="divide">Dzielenie</option>
+    </select>
+    <input type="text" id="num1" placeholder="First Number">
+    <input type="text" id="num2" placeholder="Second Number">
+    <input type="button" value="Oblicz" onclick="calculateBasic()">
+    <p>Result: <span id="basicResult"></span></p>
+</div>
+
+<div class="calculator">
+    <h3>Zaawansowany</h3>
+    <select id="advancedOp">
+        <option value="cos">Cosinus</option>
+        <option value="sin">Sinus</option>
+        <option value="tan">Tangens</option>
+        <option value="binToDec">Binarnie na dziesiętne</option>
+        <option value="decToBin">Dziesiętne na binarne</option>
+        <option value="decToHex">Dziesiętne na szesnastkowe</option>
+        <option value="hexToDec">Szesnastkowe na dziesiętne</option>
+    </select>
+    <input type="text" id="advInput" placeholder="Input">
+    <input type="button" value="Oblicz" onclick="calculateAdvanced()">
+    <p>Result: <span id="advancedResult"></span></p>
+</div>
+
+<script>
+    function calculateBasic() {
+        let op = document.getElementById('basicOp').value;
+        let num1 = parseFloat(document.getElementById('num1').value);
+        let num2 = parseFloat(document.getElementById('num2').value);
+        let result = 0;
+
+        switch (op) {
+            case 'add':
+                result = num1 + num2;
+                break;
+            case 'subtract':
+                result = num1 - num2;
+                break;
+            case 'multiply':
+                result = num1 * num2;
+                break;
+            case 'divide':
+                result = num1 / num2;
+                break;
+        }
+        document.getElementById('basicResult').textContent = result;
+    }
+
+    function calculateAdvanced() {
+        let op = document.getElementById('advancedOp').value;
+        let input = document.getElementById('advInput').value;
+        let result = 0;
+
+        switch (op) {
+            case 'cos':
+                result = Math.cos(input * Math.PI / 180); // Convert degrees to radians
+                break;
+            case 'sin':
+                result = Math.sin(input * Math.PI / 180);
+                break;
+            case 'tan':
+                result = Math.tan(input * Math.PI / 180);
+                break;
+            case 'binToDec':
+                result = parseInt(input, 2);
+                break;
+            case 'decToBin':
+                result = (input >>> 0).toString(2);
+                break;
+            case 'decToHex':
+                result = parseInt(input).toString(16);
+                break;
+            case 'hexToDec':
+                result = parseInt(input, 16);
+                break;
+        }
+        document.getElementById('advancedResult').textContent = result;
+    }
+</script>
+</body>
+</html>
